@@ -1,0 +1,171 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+/*Ajusta a medida para que venha da borda e qualquer preenchimento interno ele coloca dentro*/ 
+}
+
+:root{
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255,255,255,0.5); 
+  --surface-color: rgba(255,255,255,0.1);
+  --surface-color-hoover: rgba(255,255,255,0.05);
+  --social-links-hoover:rgba(255,255,255,0.2);
+  --swith-br-url: url(./assets/moon-stars.svg);
+}
+
+.light{
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0,0,0,0.5);
+  --surface-color: rgba(0,0,0,0.05);
+  --surface-color-hoover: rgba(0,0,0,0.2);
+  --social-links-hoover:rgba(0,0,0,0.1);
+  --swith-br-url-hoover: url(./assets/sun.svg);
+}
+
+body{
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat; 
+      faz com que a imagem nao se repita
+  background-position: top center;
+      mede o tamanho, com eixo x e y, colocando o topo no y e o center no meio
+  background-size: cover;  
+      cobre todo o espaço visivel 
+   */
+
+/*background: color image, repeat, position/size*/
+background: var(--bg-url) no-repeat top center/cover;
+}
+
+body *{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  color: var(--text-color);
+}
+
+
+  #container{
+    width: 360px;
+    /*Adicionando o primeiro container o box*/
+    margin: auto;
+    /* Alinha ao meio*/
+    margin: 56px auto 0px;
+    padding: 0 24px;
+  }
+
+/*profile*/
+#profile {
+text-align: center;
+/*Se for em block ele nao aceita*/
+padding: 24px;
+/*Adiciona esse preenchimento para todos os lados da caixa*/
+}
+
+  #profile img{
+   width: 112px;
+   /*margin: auto;
+   Elemento inline nao consigo aplicar o margin*/
+  }
+
+#profile p {
+
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+
+}
+/*swithc*/
+
+#switch{
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: white var(--swith-br-url) no-repeat center;
+  border: 0;
+  border-radius: 50%; 
+
+  top: 50%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.light #switch button{
+  right: 0;
+  left: initial;
+}
+
+
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+
+/*links*/
+ul{
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  padding: 24px 0;
+}
+ul li a{
+   /*ul li é em block, ja ul li a é em line*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px) ;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+ /*pseudo-selector*/
+ ul li a:hover{
+  background: var(--surface-color-hoover);
+  border: 1.5px solid var(--text-color);
+ }
+
+ #social-links{
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+ }
+#social-links a{
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  padding: 16px;
+  transition: background 0.3s;
+  border-radius: 50%;
+}
+ #social-links a:hover{
+  background: var(--social-links-hoover)
+ }
+
+ footer{
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+ }
